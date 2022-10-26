@@ -1,0 +1,81 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Noom
+        link(rel="stylesheet", href="https://unpkg.com/mvp.css")
+        style(type='text/css').
+            body {
+                background-color: lightblue;
+                color: #333;
+            }
+            .wrapper {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-evenly;
+            }
+            #room {
+                width: 100%;
+            }
+            form {
+                display: flex;
+                align-items: center;
+            }
+            #nick_change {
+                display: none;
+                background-color: lightcoral;
+            }
+            input {
+                width: 100%;
+                margin: 0 10px 0 0;
+            }
+            ul {
+                list-style-type: none;
+            }
+            li {
+                min-width: 60px;
+                margin: 5px;
+                padding: 14px 18px !important;
+                background-color: white;
+                border-radius: 10px;
+            }
+            button {
+                min-width: 100px;
+                height: 32px;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    body
+        header
+            h1 Noom
+        main
+            div.wrapper
+                div#RoomList
+                    h3 Join Room 👇
+                    select#RoomSelect
+                div#welcome
+                    h3 Create Room 👇
+                    form
+                        label Room
+                        input(placeholder="room name", required, type="text")
+                        button(type="submit") Create
+                div#nickname
+                    h3 Save nickname 👇
+                    form
+                        label nickname
+                        input(placeholder="nickname", required, type="text")
+                        button Save
+            div.wrapper
+                div#room
+                    h3
+                    ul
+                    form#msg
+                        input(placeholder="message", required, type="text")
+                        button Send
+        script(src="/socket.io/socket.io.js") 
+        script(src="/public/app.js") 
